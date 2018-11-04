@@ -1,7 +1,7 @@
 <div class="side-menu">
     <p>This is a real quick test to see if everything is working properly</p>
     <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
-    <h3>Recent Posts</h3>
+    <h3><span>Recent Posts</span></h3>
     {{ range first 10 (where .Site.RegularPages "Type" "posts") }}
      {{ .Render "li"}}
     {{ end }}
