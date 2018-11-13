@@ -177,3 +177,6 @@ li.active {
     background-color: rgb(185, 185, 185);
 }
 
+.post-suggestion{
+    padding: 0.2rem;
+}

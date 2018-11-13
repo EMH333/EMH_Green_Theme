@@ -33,10 +33,11 @@
     <div>
         <h4>Others in Section:</h4>
         {{ with .PrevInSection }}
-          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+          <a class="previous post-suggestion" href="{{.Permalink}}"> {{.Title}}</a>
         {{ end }}
         {{ with .NextInSection }}
-          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+          <span> | </span>
+          <a class="next post-suggestion" href="{{.Permalink}}"> {{.Title}}</a>
         {{ end }}
     </div>
 </aside>
