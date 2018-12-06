@@ -1,3 +1,14 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
 body {
     background-color: #307924;
 }
@@ -33,10 +44,34 @@ hr {
 
 .content {
     grid-column: 1;
+    max-width: 755px;
+}
+
+.content h4 {
+    word-wrap: break-word;
+}
+
+.content h3 {
+    word-wrap: break-word;
+}
+
+.content h2 {
+    word-wrap: break-word;
+}
+
+.content img {
+    max-width: 755px;
+    display: block;
+    padding: 0.25rem;
+}
+
+.title-span {
+    border-bottom: 3px solid #666;
 }
 
 .side-menu {
     grid-column: 2;
+    max-width: 400px;
 }
 
 .side-menu h3 span {
@@ -177,6 +212,6 @@ li.active {
     background-color: rgb(185, 185, 185);
 }
 
-.post-suggestion{
+.post-suggestion {
     padding: 0.2rem;
 }
