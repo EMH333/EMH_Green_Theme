@@ -1,0 +1,5 @@
+https://gohugo.io/content-management/summaries/
+https://gohugo.io/content-management/related/
+https://gohugo.io/content-management/image-processing/
+https://gohugo.io/content-management/page-resources/
+
