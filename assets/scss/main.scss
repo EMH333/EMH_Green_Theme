@@ -52,6 +52,15 @@ hr {
 .content {
     grid-column: 1;
     max-width: 755px;
+    line-height: 1.2;
+}
+
+.content h6 {
+    word-wrap: break-word;
+}
+
+.content h5 {
+    word-wrap: break-word;
 }
 
 .content h4 {
@@ -76,6 +85,7 @@ hr {
 
 .title-span {
     border-bottom: 3px solid #666;
+    line-height: 1.5;
 }
 
 .side-menu {
