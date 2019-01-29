@@ -1,9 +1,10 @@
 <header class="header">
     <a href="/"><img src="/img/logo.png" alt="Logo" width="100" height="100"></a>
-    <a href="/"><h1>Ethan Hampton's Website</h1></a>
+    <a href="/"><h1>{{ .Site.Title }}</h1></a>
     <div class="nav">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
+        {{ if ne .Identifier "images" }}
         {{ if .HasChildren }}
         <div class="dropdown">
             <a href="#" class="dropdown-toggle">
@@ -15,12 +16,10 @@
                 {{ end }}
             </div>
         </div>
-
-
-
         {{ else }}
         <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
             href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
         {{ end }}
         {{ end }}
     </div>

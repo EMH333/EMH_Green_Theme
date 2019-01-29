@@ -4,18 +4,13 @@
 name = "Ethohampton"
 license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = "Just a test"
-homepage = "http://example.com/"
+description = "Ethan Hampton's personal theme for use on his website"
+homepage = "https://github.com/EMH333/EMH_Green_Theme"
 tags = []
 features = []
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Ethan Hampton"
+  homepage = "https://ethohampton.com"
 
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
