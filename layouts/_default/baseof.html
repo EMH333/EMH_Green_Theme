@@ -34,6 +34,9 @@
     {{ $style := resources.Get "/scss/main.scss" | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">
     <!-- TODO add favicon -->
+    {{if .Site.Params.sideMenuAd}}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {{ end }}
 </head>
 
 <body>

@@ -1,10 +1,18 @@
 <div class="side-menu">
     <p>{{.Site.Params.sideMenuInfo}}</p>
 
-    <div>{{.Site.Params.sideMenuAd}}</div>
+    {{if .Site.Params.sideMenuAd}}
+    <div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9156058501050335"
+            data-ad-slot="4144574357" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    {{ end }}
     <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
     <h3><span>Recent Posts</span></h3>
     {{ range first 5 (where .Site.RegularPages "Type" "posts") }}
-     {{ .Render "li"}}
+    {{ .Render "li"}}
     {{ end }}
 </div>
