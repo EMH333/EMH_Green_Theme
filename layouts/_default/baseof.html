@@ -33,6 +33,7 @@
     {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" false "includePaths" "")}}
     {{ $style := resources.Get "/scss/main.scss" | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">
+    <!-- TODO add favicon -->
 </head>
 
 <body>

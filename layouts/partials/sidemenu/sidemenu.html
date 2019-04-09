@@ -1,5 +1,7 @@
 <div class="side-menu">
     <p>{{.Site.Params.sideMenuInfo}}</p>
+
+    <div>{{.Site.Params.sideMenuAd}}</div>
     <!-- Note that .Pages is the same as .Site.RegularPages on the homepage template. -->
     <h3><span>Recent Posts</span></h3>
     {{ range first 5 (where .Site.RegularPages "Type" "posts") }}
