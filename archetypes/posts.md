@@ -7,6 +7,7 @@ aliases: []
 date: {{ .Date }}
 author: "Ethan Hampton"
 draft: true
+canonicalUrl: "remove if this is original content"
 ---
 Content to show in summary here
 <!--more-->
