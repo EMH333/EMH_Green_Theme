@@ -4,7 +4,8 @@
     <div class="nav">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        {{ if ne .Identifier "images" }}
+        {{ $banned := in $.Site.Params.ignoredMenuTypes .Identifier}}
+        {{ if not $banned }}
         {{ if .HasChildren }}
         <div class="dropdown">
             <a href="#" class="dropdown-toggle">

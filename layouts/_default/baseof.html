@@ -10,7 +10,7 @@
     <title>{{ .Title }} – {{ .Site.Title }}</title>
     {{- end }}
 
-    {{ .Hugo.Generator }}
+    {{ hugo.Generator }}
 
     <!-- Internal templates -->
     {{ template "_internal/opengraph.html" . }}
