@@ -10,7 +10,7 @@
         {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
 
         {{ range $paginator.Pages }}
-        {{ .Render "li"}}
+        {{ .Render "summary"}}
         {{ end }}
     </ul>
     {{ template "_internal/pagination.html" . }}
