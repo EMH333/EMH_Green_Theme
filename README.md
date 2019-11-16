@@ -25,7 +25,7 @@ There is currently no test system set up but a PR is always welcome
 
 ## Contributing
 
-Please submit issues and pull requests! Anything improving design, automation or other beneifits is welcome!
+Please submit issues and pull requests! Anything improving design, automation or other benefits is welcome!
 
 ## Versioning
 
@@ -37,6 +37,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 
