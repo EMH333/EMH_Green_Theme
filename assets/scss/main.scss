@@ -54,10 +54,11 @@ hr {
     grid-column: 1;
     max-width: 755px;
     line-height: 1.2;
+    overflow-wrap: break-word;
 }
 
 .content h2,h3,h4,h5,h6 {
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .content img {
