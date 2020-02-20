@@ -5,6 +5,15 @@
 
 li.summary-item {
   list-style-type: none;
+
+  article > div > p:last-of-type {
+    margin-bottom: 0px;
+  }
+
+  article > div > p:first-of-type {
+    margin-top: 0px;
+  }
+
 }
 
 .summary-item-title {
@@ -13,7 +22,7 @@ li.summary-item {
     margin-top: 1.5em;
     margin-bottom: 0.3em;
   }
-  span{
-      font-size: 0.8em;
+  span {
+    font-size: 0.8em;
   }
 }
