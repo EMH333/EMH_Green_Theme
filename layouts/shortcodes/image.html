@@ -83,7 +83,7 @@
         {{ if eq $full "true" }}class="full"{{ end }}
         src="{{ $original.RelPermalink }}"
         {{ if $title }}alt="{{ $title }}"{{ end }}
-        {{ if $style}}style="{{ $style }}"{{ end }}
+        {{ if $style}}style="{{ $style | safeCSS }}"{{ end }}
     >
   {{ end }}
 {{ end }}
