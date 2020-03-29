@@ -5,22 +5,24 @@
 <section id="main">
   <h1 id="title"><span class="title-span">{{ .Title }}</span></h1>
   <div>
-        <article id="content">
-           {{ .Content }}
-        </article>
+    <article id="content">
+      {{ .Content }}
+    </article>
   </div>
 </section>
 <aside id="meta">
-    <div>
+  <div>
     <section>
-      <h4 id="date">Published {{ .Date.Format "Mon Jan 2, 2006 at 03:04PM" }} </h4>
+      <h4 id="date">{{if ne .Lastmod .Date}}Last Modified:
+        {{ .Lastmod.Format "Mon Jan 2, 2006 at 03:04PM" }}
+        <br>Published: {{ .Date.Format "Mon Jan 2, 2006 at 03:04PM" }}{{end}}</h4>
       <h5 id="wordcount"> {{ .WordCount }} Words </h5>
     </section>
     {{ with .Params.categories }}
     <p id="categories">
       Categories: <br>
       {{ range . }}
-        <a href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a>, 
+      <a href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a>,
       {{ end }}
     </p>
     {{ end }}
@@ -28,20 +30,20 @@
     <p id="tags">
       Tags: <br>
       {{ range . }}
-        <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>, 
+      <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>,
       {{ end }}
     </p>
     {{ end }}
-    </div>
-    <div>
-        <h4>Others in Section:</h4>
-        {{ with .PrevInSection }}
-          <a class="previous post-suggestion" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-        {{ with .NextInSection }}
-          <span> | </span>
-          <a class="next post-suggestion" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-    </div>
+  </div>
+  <div>
+    <h4>Others in Section:</h4>
+    {{ with .PrevInSection }}
+    <a class="previous post-suggestion" href="{{.Permalink}}"> {{.Title}}</a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <span> | </span>
+    <a class="next post-suggestion" href="{{.Permalink}}"> {{.Title}}</a>
+    {{ end }}
+  </div>
 </aside>
 {{ end }}
