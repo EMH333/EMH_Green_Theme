@@ -4,9 +4,11 @@
         <div>
             <div class="summary-item-title">
                 <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                <span>{{.Date.Format "02-Jan-2006"}}</span>
+                <span> {{.Date.Format "02-Jan-2006"}}</span>
                 |
                 <span>{{ .WordCount }} Words</span>
+                |
+                <span>{{ .ReadingTime}} min read</span>
             </div>
             {{safeHTML .Summary }}
         </div>
