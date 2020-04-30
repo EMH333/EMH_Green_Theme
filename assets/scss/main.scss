@@ -1,3 +1,4 @@
+@import "varibles.scss";
 @import "normalize.scss";
 @import "menu.scss";
 @import "list.scss";
@@ -14,7 +15,8 @@ html {
 
 
 body {
-    background-color: #307924;
+    background-color: $theme-color;
+    font-family: 'Lato', sans-serif;
 }
 
 hr {
@@ -22,8 +24,8 @@ hr {
 }
 
 .container {
-    background-color: white;
-    color: #666;
+    background-color: $background-color;
+    color: $text-color;
     padding: 0.5em;
     margin: 1em;
     max-width: 1250px;
@@ -33,7 +35,6 @@ hr {
 
 .body-container {
     line-height: 22px;
-    font-family: 'Lato', sans-serif;
     font-size: 16px;
     padding: 2em;
     display: grid;
@@ -42,12 +43,17 @@ hr {
 }
 
 .body-container h2,h3,h4,h5,h6 {
-    color: #1B1B1B;
+    color: lighten($color: $title-color, $amount: 20);
 }
 
 .body-container h1{
-    color: #505050;
+    color: darken($color: $text-color, $amount: 10);
     text-align: center;
+}
+
+.title-span {
+    border-bottom: 3px solid darken($color: $text-color, $amount: 10);
+    line-height: 1.5;
 }
 
 .content {
@@ -69,24 +75,18 @@ hr {
     object-fit: contain;
 }
 
-.title-span {
-    border-bottom: 3px solid #666;
-    line-height: 1.5;
-}
-
 .side-menu {
     grid-column: 2;
     max-width: 400px;
 }
 
 .side-menu h3 span {
-    color: black;
+    color: $title-color;
     font-weight: 400;
-    border-bottom: 0.2rem solid green;
+    border-bottom: 0.2rem solid $theme-color;
 }
 
 .header {
-    font-family: 'Lato', sans-serif;
     text-align: center;
 }
 
@@ -95,7 +95,7 @@ hr {
     font-size: 2.5em;
     margin: 1rem;
     margin-top: 0em;
-    color: black;
+    color: $title-color;
 }
 
 .header img {
@@ -104,12 +104,11 @@ hr {
 
 
 .footer {
-    font-family: 'Nunito', sans-serif;
     padding: 1em 2em;
 }
 
 a {
-    color: #307924;
+    color: $theme-color;
     text-decoration: none;
 }
 
@@ -140,7 +139,7 @@ a {
     list-style-type: none;
     margin-top: 1em;
     padding: 0.1em;
-    border: 1px solid #666;
+    border: 1px solid $text-color;
     font-size: 1.2rem;
 }
 
