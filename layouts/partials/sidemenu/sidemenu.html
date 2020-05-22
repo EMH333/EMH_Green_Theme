@@ -12,25 +12,7 @@
     {{ end }}
 
     {{if .Site.Params.sideMenuNeat}}
-    <div id="neatBox" style="display: none;">
-        <h3><span>Neat Internet Things</span></h3>
-        (Things the internet I find cool)
-        <div id="neatList"></div>
-
-        <script>
-            var list = document.getElementById("neatList");
-
-            fetch("https://neat.ethohampton.com/json").then(function (resp) {
-                return JSON.parse(resp.body)
-            }).then(function (json) {
-                for (var i = 0; i < json.length; i++) {
-                    //TODO improve parsing to reduce risk of XSS
-                    list.innerHTML += "<li><a href='"+ json[i].URL +"'"+ json[i].Description +"</a></li>"
-                }
-                document.getElementById("neatBox").style.display = "block";//unhide box
-            });
-        </script>
-    </div>
+        {{ partial "sidemenu/neatList.html" . }}
     {{ end }}
 
 
