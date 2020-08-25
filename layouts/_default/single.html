@@ -12,27 +12,28 @@
 </section>
 <aside id="meta">
   <div>
-    <section>
-      <h4 id="date">{{if ne .Lastmod .Date}}Last Modified:
+    <section class="quick">
+      <h4>{{if gt .Lastmod .Date}}Last Modified:
         {{ .Lastmod.Format "Mon Jan 2, 2006 at 03:04PM" }}
-        <br>Published: {{ .Date.Format "Mon Jan 2, 2006 at 03:04PM" }}{{end}}</h4>
+        {{end}}</h4>
+      <h4 id="date">Published: {{ .Date.Format "Mon Jan 2, 2006 at 03:04PM" }}</h4>
       <h5 id="wordcount"> {{ .WordCount }} Words </h5>
     </section>
     {{ with .Params.categories }}
-    <p id="categories">
-      Categories: <br>
+    <div id="categories">
+      <h4>Categories:</h4>
       {{ range . }}
       <a href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a>,
       {{ end }}
-    </p>
+    </div>
     {{ end }}
     {{ with .Params.tags }}
-    <p id="tags">
-      Tags: <br>
+    <div id="tags">
+      <h4>Tags:</h4>
       {{ range . }}
       <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>,
       {{ end }}
-    </p>
+    </div>
     {{ end }}
   </div>
   <div>

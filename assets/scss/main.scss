@@ -16,7 +16,10 @@ html {
 
 body {
     background-color: $theme-color;
-    font-family: 'Lato', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif; 
+    text-rendering: optimizeLegibility;
+    line-height: 1.5rem;
+    font-size: 1.15rem;
 }
 
 hr {
@@ -34,8 +37,6 @@ hr {
 }
 
 .body-container {
-    line-height: 22px;
-    font-size: 16px;
     padding: 2em;
     display: grid;
     grid-column-gap: 2em;
@@ -61,19 +62,17 @@ hr {
     max-width: 755px;
     line-height: 1.2;
     overflow-wrap: break-word;
-}
-
-.content h2,h3,h4,h5,h6 {
-    overflow-wrap: break-word;
-}
-
-.content img {
-    display: block;
-    padding: 0.25rem;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
+    h2,h3,h4,h5,h6 {
+        overflow-wrap: break-word;
+    }
+    img {
+        display: block;
+        padding: 0.25rem;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+} 
 
 .side-menu {
     grid-column: 2;
@@ -88,20 +87,17 @@ hr {
 
 .header {
     text-align: center;
+    h1 {
+        font-weight: 400;
+        font-size: 2.5em;
+        margin: 1rem;
+        margin-top: 0em;
+        color: $title-color;
+    }
+    img {
+        margin: 0.7em;
+    }
 }
-
-.header h1 {
-    font-weight: 400;
-    font-size: 2.5em;
-    margin: 1rem;
-    margin-top: 0em;
-    color: $title-color;
-}
-
-.header img {
-    margin: 0.7em;
-}
-
 
 .footer {
     padding: 1em 2em;
@@ -141,24 +137,24 @@ a {
     padding: 0.1em;
     border: 1px solid $text-color;
     font-size: 1.2rem;
+    li {
+        display: inline-block;
+        margin: 0;
+        padding: 0.1rem;
+    }
 }
 
-.pagination li {
-    display: inline-block;
-    margin: 0;
-    padding: 0.1rem;
+li {
+    .active {
+        background-color: rgb(185, 185, 185);
+    }
+    .disabled {
+        display: none;
+    }
 }
 
-li.disabled {
-    display: none;
-}
-
-li.active {
-    background-color: rgb(185, 185, 185);
-}
-
-.post-suggestion {
-    padding: 0.2rem;
+#meta h4,h5{
+    margin: 0.15em 0em;
 }
 
 .center {
