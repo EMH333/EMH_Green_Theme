@@ -1,4 +1,5 @@
 $theme-color: black !default;
 $background-color: white !default;
 $text-color: #555 !default; 
-$title-color: black;
+$title-color: black !default;
+$button-background: darken($background-color, 20%);
