@@ -19,7 +19,7 @@ body {
     background-color: $theme-color;
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif; 
     text-rendering: optimizeLegibility;
-    line-height: 1.5rem;
+    //line-height: 1.5rem;
     font-size: 1.15rem;
 }
 
@@ -42,15 +42,15 @@ hr {
     display: grid;
     grid-column-gap: 2em;
     grid-template-columns: auto 400px;
-}
 
-.body-container h2,h3,h4,h5,h6 {
-    color: lighten($color: $title-color, $amount: 20);
-}
+    h1 {
+        color: darken($color: $text-color, $amount: 10);
+        text-align: center;
+    }
 
-.body-container h1{
-    color: darken($color: $text-color, $amount: 10);
-    text-align: center;
+    h2,h3,h4,h5,h6 {
+        color: lighten($color: $title-color, $amount: 20);
+    }
 }
 
 .title-span {
@@ -73,17 +73,23 @@ hr {
         max-height: 100%;
         object-fit: contain;
     }
+    /* //TODO fix overflowing on pages w/ highlighed code
+    .highlight {
+        overflow-x: scroll;
+        white-space: nowrap;
+        width: 80%;
+    }*/
 } 
 
 .side-menu {
     grid-column: 2;
     max-width: 400px;
-}
 
-.side-menu h3 span {
-    color: $title-color;
-    font-weight: 400;
-    border-bottom: 0.2rem solid $theme-color;
+    h3 span {
+        color: $title-color;
+        font-weight: 400;
+        border-bottom: 0.2rem solid $theme-color;
+    }
 }
 
 .header {
