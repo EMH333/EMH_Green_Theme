@@ -32,16 +32,16 @@ hr {
     color: $text-color;
     padding: 0.5em;
     margin: 1em;
-    max-width: 1250px;
+    max-width: $container-width;
     margin-left: auto;
     margin-right: auto;
 }
 
 .body-container {
-    padding: 2em;
+    margin: 2em;
     display: grid;
-    grid-column-gap: 2em;
-    grid-template-columns: auto 400px;
+    column-gap: 2em;
+    grid-template-columns: auto $column-width;
 
     h1 {
         color: darken($color: $text-color, $amount: 10);
@@ -60,7 +60,7 @@ hr {
 
 .content {
     grid-column: 1;
-    max-width: 755px;
+    max-width: $content-width;
     line-height: 1.2;
     overflow-wrap: break-word;
     h2,h3,h4,h5,h6 {
@@ -73,17 +73,21 @@ hr {
         max-height: 100%;
         object-fit: contain;
     }
-    /* //TODO fix overflowing on pages w/ highlighed code
+
     .highlight {
         overflow-x: scroll;
         white-space: nowrap;
-        width: 80%;
-    }*/
+        width: 75vw;
+        max-width: $content-width - 25px;
+        pre {
+            display: inline-block;
+        }
+    }
 } 
 
 .side-menu {
     grid-column: 2;
-    max-width: 400px;
+    max-width: $column-width;
 
     h3 span {
         color: $title-color;
@@ -115,7 +119,7 @@ a {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: $container-width) {
     .side-menu {
         grid-row: 2;
         grid-column: 1;
@@ -129,9 +133,7 @@ a {
     .body-container {
         grid-template-columns: auto;
     }
-}
 
-@media only screen and (max-width: 1024px) {
     .container {
         margin: 1em;
     }
