@@ -14,34 +14,29 @@
 
 {{ if $original }}
   {{ if eq $resize "true" }}
-  {{ if gt $original.Width 320 }}
-    {{ $.Scratch.Set "resize_320" ($original.Resize "320x") }}
+
+  {{ if gt ($original.Width) 400 }}
+    {{ $.Scratch.Set "resize_400" ($original.Resize "400x") }}
   {{ else }}
-    {{ $.Scratch.Set "resize_320" ($original) }}
+    {{ $.Scratch.Set "resize_400" ($original) }}
   {{ end }}
 
-  {{ if gt ($original.Width) 480 }}
-    {{ $.Scratch.Set "resize_480" ($original.Resize "480x") }}
+  {{ if gt ($original.Width) 700 }}
+    {{ $.Scratch.Set "resize_700" ($original.Resize "700x") }}
   {{ else }}
-    {{ $.Scratch.Set "resize_480" ($original) }}
+    {{ $.Scratch.Set "resize_700" ($original) }}
   {{ end }}
 
-  {{ if gt ($original.Width) 768 }}
-    {{ $.Scratch.Set "resize_768" ($original.Resize "768x") }}
+  {{ if gt ($original.Width) 1000 }}
+    {{ $.Scratch.Set "resize_1000" ($original.Resize "1000x") }}
   {{ else }}
-    {{ $.Scratch.Set "resize_768" ($original) }}
+    {{ $.Scratch.Set "resize_1000" ($original) }}
   {{ end }}
 
-  {{ if gt ($original.Width) 1024 }}
-    {{ $.Scratch.Set "resize_1024" ($original.Resize "1024x") }}
+  {{ if gt ($original.Width) 1300 }}
+    {{ $.Scratch.Set "resize_1300" ($original.Resize "1300x") }}
   {{ else }}
-    {{ $.Scratch.Set "resize_1024" ($original) }}
-  {{ end }}
-
-  {{ if gt ($original.Width) 1280 }}
-    {{ $.Scratch.Set "resize_1280" ($original.Resize "1280x") }}
-  {{ else }}
-    {{ $.Scratch.Set "resize_1280" ($original) }}
+    {{ $.Scratch.Set "resize_1300" ($original) }}
   {{ end }}
 
   {{ if gt ($original.Width) 1600 }}
@@ -50,24 +45,19 @@
     {{ $.Scratch.Set "resize_1600" ($original) }}
   {{ end }}
 
-  {{ if gt ($original.Width) 1920 }}
-    {{ $.Scratch.Set "resize_1920" ($original.Resize "1920x") }}
-  {{ else }}
-    {{ $.Scratch.Set "resize_1920" ($original) }}
-  {{ end }}
-
+  <!--Sizes is 100% for now, but that should change once I feel like it-->
   <img
       {{ if eq $full "true" }}class="full"{{ end }}
       src="{{ $original.RelPermalink }}"
       srcset="
-      {{ ($.Scratch.Get "resize_320").RelPermalink }} 320w,
-      {{ ($.Scratch.Get "resize_480").RelPermalink }} 480w,
-      {{ ($.Scratch.Get "resize_768").RelPermalink }} 768w,
-      {{ ($.Scratch.Get "resize_1024").RelPermalink }} 1024w,
-      {{ ($.Scratch.Get "resize_1280").RelPermalink }} 1280w,
+      {{ ($.Scratch.Get "resize_400").RelPermalink }} 400w,
+      {{ ($.Scratch.Get "resize_700").RelPermalink }} 700w,
+      {{ ($.Scratch.Get "resize_1000").RelPermalink }} 1000w,
+      {{ ($.Scratch.Get "resize_1300").RelPermalink }} 1300w,
       {{ ($.Scratch.Get "resize_1600").RelPermalink }} 1600w,
-      {{ ($.Scratch.Get "resize_1920").RelPermalink }} 1920w
+      {{ $original.RelPermalink }} {{ with $original.Width }}{{.}}w{{ end }}
       "
+      sizes="100vw"
       {{ if $title }}alt="{{ $title }}"{{ end }}
       {{ if $style}}style="{{ $style | safeCSS }}"{{ end }}
       {{ if $width }}width="{{ $width }}"{{ end }}
