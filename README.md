@@ -1,3 +1,7 @@
+# No Longer Updated
+
+To see the most up to date version please visit https://github.com/EMH333/EMH_Website/tree/main/themes/EMH_Green_Theme . This repository is no longer updated with changes as it complicated my workflow.
+
 # EMH Green Theme
 
 This is a [Hugo](https://gohugo.io) theme in use for [Ethan Hampton's personal website](https://www.ethohampton.com). It has correct header tags for SEO purposes, uses Google Analytics, and is designed to be easy to use, modify and understand.
